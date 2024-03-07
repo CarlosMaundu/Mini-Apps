@@ -126,13 +126,37 @@
         animation-fill-mode: forwards; 
     }
 
+    /* Error Message Styles */
     .error-message {
+        position: relative;
+        display: none; /* Start with the error hidden */ 
+        background-color: #ffe0e0;
         color: red;
-        background-color: #ffe0e0; /* Light pink background */
-        padding: 10px;
-        border: 1px solid #ff6060; /* Light red border */
-        margin-bottom: 10px; 
-        text-align: center;
-        position: relative; /* Allows for absolute positioning */
-        top: 0; /* Position it at the top of the form*/
-      } 
+        padding: 10px 20px;
+        border-radius: 5px;
+        margin-top: 5px;
+    }
+
+    .error-message::before {
+        content: "!";
+        position: absolute;
+        top: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: red;
+        color: white;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: 
+    }
+
+    /* Add a class to make the error message visible */
+    .error-message.show {
+        display: block; 
+    }
+
+    
+      
