@@ -1,0 +1,56 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 20px;
+    background-color: #f4f4f4; /* Light background color */
+    color: #333; /* Dark text color */
+}
+
+.container {
+    background-color: #fff; /* White container background */
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Subtle box shadow */
+}
+
+h1 {
+    color: #555;  /* A darker heading color */
+    margin-bottom: 10px;
+}
+
+/* Form Styles */
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold; 
+}
+
+form input, form select {
+    width: 100%; 
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box; 
+}
+
+form button {
+    background-color: #00ba5d; 
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #0077a6; /* Slightly darker on hover */
+}
+
+/* Result Styles */
+#result {
+    margin-top: 20px;
+    font-size: 1.2em; 
+}
