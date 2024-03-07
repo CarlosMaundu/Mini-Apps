@@ -121,7 +121,18 @@
     }
     /* Class to add when the result should be visible */
     .result-visible {
-        opacity: 1; /* Fully visible */
-        animation: fadeIn 1s ease-in; /* Entrance animation */
-        animation-fill-mode: forwards; /* Keeps the result field visible after animation */
+        opacity: 1; 
+        animation: fadeIn 1s ease-in; 
+        animation-fill-mode: forwards; 
     }
+
+    .error-message {
+        color: red;
+        background-color: #ffe0e0; /* Light pink background */
+        padding: 10px;
+        border: 1px solid #ff6060; /* Light red border */
+        margin-bottom: 10px; 
+        text-align: center;
+        position: relative; /* Allows for absolute positioning */
+        top: 0; /* Position it at the top of the form*/
+      } 

@@ -25,6 +25,7 @@ const femaleNames = {
 // Event listener for form submission   
 form.addEventListener('submit', function(event) {
     event.preventDefault();
+    
     // Get birthday and gender
     const birthdayString = birthdayInput.value; 
     const gender = genderSelect.value; 
@@ -45,7 +46,7 @@ form.addEventListener('submit', function(event) {
          alert('Invalid date! Please enter a valid day and month.');
          return;
      }
-     
+
      // Additional validation for specific months
     if ((month === 4 || month === 6 || month === 9 || month === 11) && day > 30) {
         displayError('Invalid date! There are only 30 days in this month.');
@@ -72,6 +73,37 @@ form.addEventListener('submit', function(event) {
      // Show the result container with animation
      resultDiv.classList.add('result-visible'); 
  }); 
+
+ // Function to display error message
+function displayError(message) {
+    clearError(); // Clear any previous error messages
+    const errorDiv = document.createElement('div');
+    errorDiv.classList.add('error-message');
+    errorDiv.textContent = message;
+    // Insert the error message before the form
+  form.insertBefore(errorDiv, form.firstChild); 
+
+  // Fade out the error message after a few seconds
+  setTimeout(() => {
+    errorDiv.style.opacity = '0'; // Start fading out
+    setTimeout(() => {
+        errorDiv.remove(); // Remove the element after it's faded out
+    }, 500); // Duration of the fade-out animation
+  }, 3000); // Delay before fading out starts (3 seconds) 
+}
+
+// Function to clear error messages
+function clearError() {
+    const errorDiv = form.querySelector('.error-message');
+    if (errorDiv) {
+        errorDiv.remove();
+    }
+}
+
+// Function to check if a year is a leap year
+function isLeapYear(year) {
+    return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
+}
 // Logic to calculate day of the week based on date (considering leap years)
 function calculateDayOfWeek(year, month, day) {
 const adjustedYear = month === 1 || month === 2 ? year - 1 : year;
