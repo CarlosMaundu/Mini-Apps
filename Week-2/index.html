@@ -8,10 +8,10 @@
 </head>
 <body>
     <h1>Discover Your Akan Name</h1>
-    <p>Enter your birthday and gender to find your traditional Ghanaian name.</p>
+    <p>Enter your birthday (dd/mm/yyyy format) and gender to find your traditional Ghanaian name.</p>
     <form id="akan-name-form">
         <label for="birthday">Birthday:</label>
-        <input type="date" id="birthday" name="birthday" required>
+        <input type="text" id="birthday" name="birthday" pattern="\d{2}/\d{2}/\d{4}" required>
         <br>
         <label for="gender">Gender:</label>
         <select id="gender" name="gender" required>

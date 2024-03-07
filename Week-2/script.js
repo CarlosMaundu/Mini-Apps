@@ -6,6 +6,8 @@ const resultDiv = document.getElementById('result');
 form.addEventListener('submit', function(event) {
     event.preventDefault();
     const birthday = new Date(birthdayInput.value);
+    const month = birthday.getMonth() + 1; // Months are 0-indexed
+    
     if (isNaN(birthday.getTime())) {
         alert('Invalid date! Please enter a valid date.');
         return;
