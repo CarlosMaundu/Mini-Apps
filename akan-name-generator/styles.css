@@ -1,30 +1,40 @@
 /* General Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Lato', sans-serif;
     margin: 20px;
     padding: 20px;
-    background-color: #f4f4f4; 
+    background-image: url("images/sunset.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     color: #333; 
 }
 
 .container {
-    background-color: #fff;
+    background-color:rgba(229, 215, 189, 0.8);
     border-radius: 8px;
     padding: 20px;
     text-align: center;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); 
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
-    color: #555;  
-    margin-bottom: 10px;
+    color: #E5D7BD
+}
+fieldset legend {
+    color: #FBD303; 
+    font-weight: bold; 
 }
 
+p { 
+    color: #FBD303 /* A darker shade of grey for the description */
+}
 /* Form Styles */
 form label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold; 
+    color:   #E5D7BD
 }
 
 form input, form select {
@@ -34,11 +44,19 @@ form input, form select {
     border: 1px solid #ddd;
     border-radius: 4px;
     box-sizing: border-box; 
+    background-color: #3FA852;
+    color: #fff;
+    
+}
+form input:focus {
+    outline: none; 
+    border-color: #FBD303; 
+    box-shadow: 0 0 5px rgba(251, 211, 3, 0.5);
 }
 
 form button {
     background-color: #00ba5d; 
-    color: white;
+    color:#000000;
     padding: 10px 20px;
     border: none;
     border-radius: 4px;
@@ -46,11 +64,12 @@ form button {
 }
 
 form button:hover {
-    background-color: #0077a6; 
+    background-color:  #e8c200;
 }
 
 
 #result {
     margin-top: 20px;
     font-size: 1.2em; 
+    color: #476268;
 }
