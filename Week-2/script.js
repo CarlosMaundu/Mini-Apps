@@ -6,6 +6,10 @@ const resultDiv = document.getElementById('result');
 form.addEventListener('submit', function(event) {
     event.preventDefault();
     const birthday = new Date(birthdayInput.value);
+    if (isNaN(birthday.getTime())) {
+        alert('Invalid date! Please enter a valid date.');
+        return;
+    }
   
 
 });
