@@ -59,6 +59,8 @@ form.addEventListener('submit', function(event) {
  
      // Display result
      resultDiv.textContent = `Your Akan name is ${akanName}`;
+     // Show the result container with animation
+     resultDiv.classList.add('result-visible'); 
  }); 
 // Logic to calculate day of the week based on date (considering leap years)
 function calculateDayOfWeek(year, month, day) {
