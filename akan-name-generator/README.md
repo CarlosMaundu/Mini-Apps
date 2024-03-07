@@ -25,6 +25,9 @@ Open the published GitHub Pages URL in your web browser to use the application.
 - HTML
 - CSS
 - JavaScript
+## Deployed Site
+
+You can try out the live Akan Name Generator here: [https://carlosmaundu.github.io/Mini-Apps/akan-name-generator](https://carlosmaundu.github.io/Mini-Apps/akan-name-generator)
 
 ## Contact Information
 carlos.mbingo@student.moringaschool.com
