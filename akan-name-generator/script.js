@@ -45,6 +45,16 @@ form.addEventListener('submit', function(event) {
          alert('Invalid date! Please enter a valid day and month.');
          return;
      }
+     
+     // Additional validation for specific months
+    if ((month === 4 || month === 6 || month === 9 || month === 11) && day > 30) {
+        displayError('Invalid date! There are only 30 days in this month.');
+        return;
+    }
+    if (month === 2 && (day > 29 || (day === 29 && !isLeapYear(year)))) {
+        displayError('Invalid date! February has only 28 or 29 days.');
+        return;
+    }
  
      // Calculate day of week
      const dayOfWeek = calculateDayOfWeek(year, month, day);
