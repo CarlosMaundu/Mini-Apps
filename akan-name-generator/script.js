@@ -83,12 +83,15 @@ form.addEventListener('submit', function(event) {
 function displayError(message, field) {
     errorDiv.textContent = message;
     field.parentNode.appendChild(errorDiv); 
-    errorDiv.classList.add('show'); // Add the 'show' class to make it visible
+    errorDiv.classList.add('show');
+    setTimeout(() => {
+        errorDiv.classList.remove('show');  
+    }, 3000); // 3 seconds delay
 }
 
 // Function to clear error messages
 function clearError() {
-    errorDiv.classList.remove('show'); // Remove the 'show' class to hide it
+    errorDiv.classList.remove('show'); 
 }
 
 // Function to check if a year is a leap year
@@ -108,3 +111,7 @@ function calculateDayOfWeek(year, month, day) {
 
     return dayOfWeek;
 }
+
+// Event listeners to clear errors on user interaction
+birthdayInput.addEventListener('input', clearError); 
+genderSelect.addEventListener('change', clearError);
