@@ -1,79 +1,99 @@
-/* General Styles */
-body {
-    font-family: 'Lato', sans-serif;
-    margin: 20px;
-    padding: 20px;
-    background-image: url("images/sunset.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: #333; 
-}
+    /* General Styles */
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Lato', sans-serif;
+        display: flex; 
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background-image: url("images/sunset.jpg"); 
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
 
-.container {
-    background-color:rgba(229, 215, 189, 0.8);
-    border-radius: 8px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
-    color: #E5D7BD
-}
-fieldset legend {
-    color: #FBD303; 
-    font-weight: bold; 
-}
-
-p { 
-    color: #FBD303 /* A darker shade of grey for the description */
-}
-/* Form Styles */
-form label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold; 
-    color:   #E5D7BD
-}
-
-form input, form select {
-    width: 100%; 
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    box-sizing: border-box; 
-    background-color: #3FA852;
-    color: #fff;
+    .form-container {
+        
+        background-color:rgba(229, 215, 189, 0.8);
+        border-radius: 8px;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        
+    }
+    .your-details-title {
+        height: 50px; 
+        background: #FBD303; 
+        border-radius: 5px 5px 0 0; 
+        color: #fff;
+        font-size: 18px; 
+        font-weight: 600; 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
     
-}
-form input:focus {
-    outline: none; 
-    border-color: #FBD303; 
-    box-shadow: 0 0 5px rgba(251, 211, 3, 0.5);
-}
 
-form button {
-    background-color: #00ba5d; 
-    color:#000000;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
+    h1 {
+        color: #E5D7BD
+    }
+    fieldset legend {
+        color: #FBD303; 
+        font-weight: bold; 
+    }
 
-form button:hover {
-    background-color:  #e8c200;
-}
+    p { 
+        color: #FBD303 
+    }
+    /* Form Styles */
+    form label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold; 
+        color:   #000000
+        
+    }
+
+    form input, form select {
+        width: 100%; 
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        box-sizing: border-box; 
+        background-color: #3FA852;
+        color: #fff;
+        
+    }
+    form input:focus {
+        outline: none; 
+        border-color: #FBD303; 
+        box-shadow: 0 0 5px rgba(251, 211, 3, 0.5);
+    }
 
 
-#result {
-    margin-top: 20px;
-    font-size: 1.2em; 
-    font-weight: bold;
-    padding: 15px;
-    border: 2px solid  #476268;
-    border-radius: 8px;
-    color: #ffffff;
-}
+    form button {
+        background-color: #00ba5d; 
+        color:#fdfdfd;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+    }
+
+    form button:hover {
+        background-color:  #e8c200;
+    }
+
+
+    #result {
+        margin-top: 20px;
+        font-size: 1.2em; 
+        font-weight: bold;
+        padding: 15px;
+        border: 2px solid  #476268;
+        border-radius: 10px;
+        color: #ffffff;
+    }

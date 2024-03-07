@@ -5,27 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Akan Name Generator</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
 </head>
 <body>
     <h1>Discover Your Akan Name</h1>
-    <p>Enter your birthday (dd/mm/yyyy format) and gender to find your traditional Ghanaian name.</p>
-    <form id="akan-name-form">
-        <fieldset>
-            <legend>Your Details</legend>
-            <label for="birthday">Enter your birthday (dd/mm/yyyy):</label>
-            <input type="text" id="birthday" name="birthday" pattern="\d{2}/\d{2}/\d{4}" required>
+    <p>Enter your birthday and gender to find your traditional Ghanaian name.</p>
+    <div class="form-container">
+        <form id="akan-name-form">
+            <div class="your-details-container"> 
+                <div class="your-details-title">Your Details</div> 
+                <fieldset> 
+                    <div class="field">
+                        <i class="fa fa-calendar icon"></i>
+                        <label for="birthday">Enter your birthday (dd/mm/yyyy):</label>
+                        <input type="text" id="birthday" name="birthday" pattern="\d{2}/\d{2}/\d{4}" required>
+                    </div>
+                    <div class="field">
+                        <i class="fa fa-mars icon"></i>
+                        <i class="fa fa-venus icon"></i>
+                        <label for="gender">Select your Gender:</label>
+                        <select id="gender" name="gender" required>
+                            <option value="male" selected>Male</option> 
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+                    <button type="reset">Clear</button>
+                </fieldset>
+            </div> 
             <br>
-            <label for="gender">Select your gender:</label>
-            <select id="gender" name="gender" required>
-                <option value="male" selected>Male</option> 
-                <option value="female">Female</option>
-            </select>
-            <button type="reset">Clear</button>
-        </fieldset>
-        <br>
-        <button type="submit">Find My Name</button>
-    </form>
+            <button type="submit">Find My Name</button>
+        </form>
+    </div>
     <div id="result"></div>
     <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/your_fontawesome_kit_id.js" crossorigin="anonymous"></script>
+</body>
 </body>
 </html>
