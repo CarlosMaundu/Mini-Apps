@@ -23,6 +23,18 @@ form.addEventListener('submit', function(event) {
         alert('Invalid date! Please enter a valid day and month.');
         return;
     }
-  
+// Logic to calculate day of the week based on date (considering leap years)
+function calculateDayOfWeek(year, month, day) {
+const adjustedYear = month === 1 || month === 2 ? year - 1 : year;
+const adjustedMonth = month === 1 || month === 2 ? month + 12 : month;
+const century = Math.floor(adjustedYear / 100);
+const yearOfCentury = adjustedYear % 100;
+
+let dayOfWeek = (day + Math.floor(2.6 * adjustedMonth - 0.2) - 2 * century - Math.floor(century / 4) + yearOfCentury + Math.floor(yearOfCentury / 4)) % 7;
+
+dayOfWeek = (dayOfWeek + 6) % 7; // Adjust for 0 being Sunday
+
+return dayOfWeek;
+}
 
 });
