@@ -77,6 +77,7 @@ form.addEventListener('submit', function(event) {
     // Display result
     resultDiv.textContent = `Your Akan name is ${akanName}`;
     resultDiv.classList.add('result-visible'); 
+    
 }); 
 
 // Function to display error message
