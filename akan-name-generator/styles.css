@@ -74,25 +74,36 @@
     }
 
 
-    form button {
+    form button[type="reset"] { 
+        background-color: #E74C3C; 
+        border-radius: 12px;
+        padding: 5px 10px;
+        color: #fff; 
+    }
+    
+    form button[type="reset"]:hover {
+        background-color: #C0392B;
+    }
+    
+    form button[type="submit"] {
         background-color: #00ba5d; 
-        color:#fdfdfd;
+        color: #fff; 
         padding: 10px 20px;
         border: none;
         border-radius: 12px;
         cursor: pointer;
+        font-weight: bold; 
     }
-
-    form button:hover {
-        background-color:  #e8c200;
+    
+    form button[type="submit"]:hover {
+        background-color: #e8c200;
     }
-
 
     #result {
         margin-top: 20px;
         font-size: 1.2em; 
         font-weight: bold;
-        padding: 15px;
+        padding: 15px 40px;
         border: 2px solid  #476268;
         border-radius: 10px;
         color: #ffffff;
