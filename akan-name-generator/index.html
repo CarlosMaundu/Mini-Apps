@@ -8,6 +8,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
 </head>
 <body>
+    <!--
+        This is the HTML code for the Akan Name Generator application.
+        It includes a form where users can enter their birthday and gender to find their traditional Ghanaian name.
+        The form has fields for birthday input and gender selection.
+        The form also includes a "Clear" button to reset the form and a "Find My Name" button to submit the form.
+        The result of the name generation will be displayed in the <div id="result"></div> element.
+        The script.js file is included for handling form submission and generating the Akan name.
+        The FontAwesome library is also included for displaying icons.
+    -->
     <h1>Discover Your Akan Name</h1>
     <p>Enter your birthday and gender to find your traditional Ghanaian name.</p>
     <div class="form-container">
@@ -15,24 +24,29 @@
             <div class="your-details-container"> 
                 <div class="your-details-title">Your Details</div> 
                 <fieldset> 
+                    <!-- Input field for birthday -->
                     <div class="field">
                         <i class="fa fa-calendar icon"></i>
                         <label for="birthday">Enter your birthday (dd/mm/yyyy):</label>
                         <input type="text" id="birthday" name="birthday" pattern="\d{2}/\d{2}/\d{4}" required>
                     </div>
+                      <!-- Input field for gender -->
                     <div class="field">
                         <i class="fa fa-mars icon"></i>
                         <i class="fa fa-venus icon"></i>
                         <label for="gender">Select your Gender:</label>
+                        <!-- Dropdown menu for selecting gender -->
                         <select id="gender" name="gender" required>
                             <option value="male" selected>Male</option> 
                             <option value="female">Female</option>
                         </select>
                     </div>
+                       <!-- Button to clear form -->
                     <button type="reset">Clear</button>
                 </fieldset>
             </div> 
             <br>
+            <!-- Button to submit the form -->
             <button type="submit">Find My Name</button>
         </form>
     </div>
