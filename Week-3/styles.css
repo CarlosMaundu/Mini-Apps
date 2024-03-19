@@ -22,11 +22,22 @@
     border: 1px solid #ddd; 
     padding: 8px;
   }
+
+#emailTable th:first-child,
+#emailTable td:first-child {
+    width: 50px; /* Adjust width as needed */
+}
+
+#emailTable th:last-child,
+#emailTable td:last-child {
+    width: 100px; /* Adjust width as needed */
+}
   
   #emailTable th {
     background-color: #f0f0f0; 
     text-align: left;
   }
+
   
   /* Buttons */
   button { 

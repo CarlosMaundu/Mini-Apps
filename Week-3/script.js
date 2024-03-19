@@ -5,6 +5,15 @@ const emailError = document.getElementById('emailError');
 const successMessage = document.getElementById('successMessage');
 const emailTable = document.getElementById('emailTable');
 const deleteSelectedButton = document.getElementById('deleteSelectedButton');
+const searchInput = document.getElementById('searchInput');
+const selectAllCheckbox = document.getElementById('selectAll');
+const prevPageButton = document.getElementById('prevPage');
+const nextPageButton = document.getElementById('nextPage');
+const currentPageDisplay = document.getElementById('currentPage');
+
+// Pagination variables
+const itemsPerPage = 5; // Change as needed
+let currentPage = 1;
 
 // Email validation function
 function validateEmail(email) {
@@ -27,24 +36,35 @@ function renderEmailTable() {
     tbody.innerHTML = ''; 
   
     const savedEmails = JSON.parse(localStorage.getItem('savedEmails')) || [];
-  
-    savedEmails.forEach((email, index) => {
+    const filteredEmails = savedEmails.filter(email => email.includes(searchInput.value));
+
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    const displayedEmails = filteredEmails.slice(startIndex, endIndex);
+
+    displayedEmails.forEach((email, index) => {
       const row = tbody.insertRow();
       row.insertCell().innerHTML = `<input type="checkbox">`; 
       row.insertCell().innerHTML = `<span class="editable-email">${email}</span>`; 
       row.insertCell().innerHTML = `
-          <button onclick="updateEmail(${index})" class="edit-button"><i class="fas fa-edit"></i></button>
-          <button onclick="deleteEmail(${index})" class="delete-button"><i class="fas fa-trash-alt"></i></button>`;
+          <button onclick="updateEmail(${startIndex + index})" class="edit-button"><i class="fas fa-edit"></i></button>
+          <button onclick="deleteEmail(${startIndex + index})" class="delete-button"><i class="fas fa-trash-alt"></i></button>`;
     });
 
-  // Add event listeners to checkboxes for toggling the delete button
-  const checkboxes = document.querySelectorAll('#emailTable input[type="checkbox"]');
-  checkboxes.forEach(checkbox => {
-    checkbox.addEventListener('change', toggleDeleteButton);
-  });
+    // Update pagination controls
+    const totalPages = Math.ceil(filteredEmails.length / itemsPerPage);
+    currentPageDisplay.textContent = currentPage;
+    prevPageButton.disabled = currentPage === 1;
+    nextPageButton.disabled = currentPage === totalPages;
+
+    // Add event listeners to checkboxes for toggling the delete button
+    const checkboxes = document.querySelectorAll('#emailTable input[type="checkbox"]');
+    checkboxes.forEach(checkbox => {
+      checkbox.addEventListener('change', toggleDeleteButton);
+    });
 }
 
-//  Update email function
+// Update email function
 function updateEmail(index) {
     const savedEmails = JSON.parse(localStorage.getItem('savedEmails')) || [];
     const emailSpan = emailTable.querySelectorAll('.editable-email')[index]; 
@@ -80,7 +100,7 @@ function updateEmail(index) {
         saveEditedEmail();
       }
     });
-  }
+}
 
 // Delete a single email
 function deleteEmail(index) {
@@ -92,7 +112,7 @@ function deleteEmail(index) {
       successMessage.textContent = 'Email deleted successfully!';
       successMessage.style.display = 'block';
     }
-  }
+}
 
 // Delete selected emails
 function deleteSelectedEmails() {
@@ -106,7 +126,7 @@ function deleteSelectedEmails() {
   
     localStorage.setItem('savedEmails', JSON.stringify(newSavedEmails));
     renderEmailTable(); 
-  }
+}
 
 // Function to toggle the delete button visibility
 function toggleDeleteButton() {
@@ -156,3 +176,35 @@ deleteSelectedButton.style.display = 'none';
 
 // Load initial data on page load
 renderEmailTable();
+
+// Search functionality
+searchInput.addEventListener('input', () => {
+  currentPage = 1; // Reset to first page on search
+  renderEmailTable();
+});
+
+// Select all functionality
+selectAllCheckbox.addEventListener('change', () => {
+  const checkboxes = document.querySelectorAll('#emailTable input[type="checkbox"]');
+  checkboxes.forEach(checkbox => {
+    checkbox.checked = selectAllCheckbox.checked;
+  });
+  toggleDeleteButton(); 
+});
+
+// Pagination event listeners
+prevPageButton.addEventListener('click', () => {
+  if (currentPage > 1) {
+    currentPage--;
+    renderEmailTable();
+  }
+});
+
+nextPageButton.addEventListener('click', () => {
+  const savedEmails = JSON.parse(localStorage.getItem('savedEmails')) || [];
+  const totalPages = Math.ceil(savedEmails.length / itemsPerPage);
+  if (currentPage < totalPages) {
+    currentPage++;
+    renderEmailTable();
+  }
+});
