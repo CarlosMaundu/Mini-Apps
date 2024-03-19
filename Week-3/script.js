@@ -30,6 +30,70 @@ function saveEmail(email) {
   renderEmailTable(); 
 }
 
+// Update pagination controls
+function updatePaginationControls(totalPages) {
+  const paginationControls = document.querySelector('.pagination-controls');
+  paginationControls.innerHTML = ''; // Clear existing controls
+
+  // Add "First" button
+  const firstButton = document.createElement('button');
+  firstButton.textContent = 'First';
+  firstButton.addEventListener('click', () => {
+      currentPage = 1;
+      renderEmailTable();
+  });
+  paginationControls.appendChild(firstButton);
+
+  // Add "Previous" button
+  const prevButton = document.createElement('button');
+  prevButton.textContent = 'Previous';
+  prevButton.disabled = currentPage === 1;
+  prevButton.addEventListener('click', () => {
+      if (currentPage > 1) {
+          currentPage--;
+          renderEmailTable();
+      }
+  });
+  paginationControls.appendChild(prevButton);
+
+  // Add page buttons
+  const startPage = Math.max(1, currentPage - 2);
+  const endPage = Math.min(totalPages, startPage + 4);
+  for (let i = startPage; i <= endPage; i++) {
+      const pageButton = document.createElement('button');
+      pageButton.textContent = i;
+      pageButton.addEventListener('click', () => {
+          currentPage = i;
+          renderEmailTable();
+      });
+      if (i === currentPage) {
+          pageButton.classList.add('active');
+      }
+      paginationControls.appendChild(pageButton);
+  }
+
+  // Add "Next" button
+  const nextButton = document.createElement('button');
+  nextButton.textContent = 'Next';
+  nextButton.disabled = currentPage === totalPages;
+  nextButton.addEventListener('click', () => {
+      if (currentPage < totalPages) {
+          currentPage++;
+          renderEmailTable();
+      }
+  });
+  paginationControls.appendChild(nextButton);
+
+  // Add "Last" button
+  const lastButton = document.createElement('button');
+  lastButton.textContent = 'Last';
+  lastButton.addEventListener('click', () => {
+      currentPage = totalPages;
+      renderEmailTable();
+  });
+  paginationControls.appendChild(lastButton);
+}
+
 // Render the email table
 function renderEmailTable() {
     const tbody = emailTable.querySelector('tbody');
@@ -56,12 +120,7 @@ function renderEmailTable() {
     currentPageDisplay.textContent = currentPage;
     prevPageButton.disabled = currentPage === 1;
     nextPageButton.disabled = currentPage === totalPages;
-
-    // Add event listeners to checkboxes for toggling the delete button
-    const checkboxes = document.querySelectorAll('#emailTable input[type="checkbox"]');
-    checkboxes.forEach(checkbox => {
-      checkbox.addEventListener('change', toggleDeleteButton);
-    });
+    updatePaginationControls(totalPages); // Update pagination controls
 }
 
 // Update email function
