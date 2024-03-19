@@ -82,7 +82,7 @@ function updateEmail(index) {
     });
   }
 
-// (Placeholder) Delete a single email
+// Delete a single email
 function deleteEmail(index) {
     if (confirm('Are you sure you want to delete this email?')) {
       const savedEmails = JSON.parse(localStorage.getItem('savedEmails')) || [];
