@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Local Storage - Email List</title>
+  <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+  <h1>Local Storage - Email List</h1>
+
+  <div class="form-group">
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email">
+    <div id="emailError" class="error-message"></div>
+  </div>
+  <button id="saveButton">Save</button>
+  <div id="successMessage" class="success-message"></div>
+
+  <table id="emailTable">
+    <thead>
+      <tr>
+        <th>Select</th> 
+        <th>Email</th>
+        <th>Actions</th> 
+      </tr>
+    </thead>
+    <tbody></tbody> 
+  </table> 
+  <button id="deleteSelectedButton">Delete Selected</button> 
+
+  <script src="script.js"></script> 
+</body>
+</html>

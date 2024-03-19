@@ -1,0 +1,12 @@
+.form-group {
+    margin-bottom: 15px;
+  }
+  .error-message, .success-message {
+    margin-top: 5px;
+    color: red;
+    display: none; 
+  }
+  .success-message {
+    color: green;
+  }
+  
