@@ -10,3 +10,42 @@
     color: green;
   }
   
+/* Table Styles */
+#emailTable {
+    width: 100%; 
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  #emailTable th, #emailTable td {
+    border: 1px solid #ddd; 
+    padding: 8px;
+  }
+  
+  #emailTable th {
+    background-color: #f0f0f0; 
+    text-align: left;
+  }
+  
+  /* Buttons */
+  button { 
+    background-color: #007bff; /* Blue */
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    opacity: 0.8;
+  }
+  
+  .delete-button { 
+    background-color: #dc3545; /* Red */
+  }
+  
+  /* Optional - For Inline Editing */
+  .editable-email:focus {
+    outline: 1px solid blue; 
+  }

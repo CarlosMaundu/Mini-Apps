@@ -23,19 +23,19 @@ function saveEmail(email) {
 
 // Render the email table
 function renderEmailTable() {
-  const tbody = emailTable.querySelector('tbody');
-  tbody.innerHTML = ''; // Clear existing rows
-
-  const savedEmails = JSON.parse(localStorage.getItem('savedEmails')) || [];
-
-  savedEmails.forEach((email, index) => {
-    const row = tbody.insertRow();
-    row.insertCell().innerHTML = `<input type="checkbox">`; 
-    row.insertCell().textContent = email;
-    row.insertCell().innerHTML = `
-        <button onclick="updateEmail(${index})">Edit</button>
-        <button onclick="deleteEmail(${index})">Delete</button>`;
-  });
+    const tbody = emailTable.querySelector('tbody');
+    tbody.innerHTML = ''; 
+  
+    const savedEmails = JSON.parse(localStorage.getItem('savedEmails')) || [];
+  
+    savedEmails.forEach((email, index) => {
+      const row = tbody.insertRow();
+      row.insertCell().innerHTML = `<input type="checkbox">`; 
+      row.insertCell().innerHTML = `<span class="editable-email">${email}</span>`; 
+      row.insertCell().innerHTML = `
+          <button onclick="updateEmail(${index})" class="edit-button"><i class="fas fa-edit"></i></button>
+          <button onclick="deleteEmail(${index})" class="delete-button"><i class="fas fa-trash-alt"></i></button>`;
+    });
 
   // Add event listeners to checkboxes for toggling the delete button
   const checkboxes = document.querySelectorAll('#emailTable input[type="checkbox"]');
@@ -44,25 +44,42 @@ function renderEmailTable() {
   });
 }
 
-// (Placeholder) Update email function
+//  Update email function
 function updateEmail(index) {
     const savedEmails = JSON.parse(localStorage.getItem('savedEmails')) || [];
-    const oldEmail = savedEmails[index];
+    const emailSpan = emailTable.querySelectorAll('.editable-email')[index]; 
   
-    const newEmail = prompt("Enter the updated email:", oldEmail);
+    const oldEmail = emailSpan.textContent;
+    emailSpan.contentEditable = 'true'; 
+    emailSpan.focus(); 
   
-    if (newEmail !== null && newEmail !== oldEmail) {
-      if (validateEmail(newEmail)) {
-        savedEmails[index] = newEmail;
-        localStorage.setItem('savedEmails', JSON.stringify(savedEmails));
-        renderEmailTable(); 
-        successMessage.textContent = 'Email updated successfully!';
-        successMessage.style.display = 'block';
+    function saveEditedEmail() {
+      const newEmail = emailSpan.textContent;
+      emailSpan.contentEditable = 'false'; 
+  
+      if (newEmail !== null && newEmail !== oldEmail) {
+        if (validateEmail(newEmail)) {
+          savedEmails[index] = newEmail;
+          localStorage.setItem('savedEmails', JSON.stringify(savedEmails));
+          successMessage.textContent = 'Email updated successfully!';
+          successMessage.style.display = 'block';
+        } else {
+          emailError.textContent = 'Invalid email format';
+          emailError.style.display = 'block';
+          emailSpan.textContent = oldEmail; // Restore on error
+        }
       } else {
-        emailError.textContent = 'Invalid email format';
-        emailError.style.display = 'block';
+        emailSpan.textContent = oldEmail; // Restore if nothing changed
       }
     }
+  
+    // Save on blur or Enter key press
+    emailSpan.addEventListener('blur', saveEditedEmail);
+    emailSpan.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter') {
+        saveEditedEmail();
+      }
+    });
   }
 
 // (Placeholder) Delete a single email
