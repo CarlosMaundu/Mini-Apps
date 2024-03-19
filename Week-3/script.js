@@ -15,6 +15,7 @@ const currentPageDisplay = document.getElementById('currentPage');
 const itemsPerPage = 5; // Change as needed
 let currentPage = 1;
 
+
 // Email validation function
 function validateEmail(email) {
   const re = /\S+@\S+\.\S+/;

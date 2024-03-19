@@ -219,9 +219,19 @@ button:hover {
 
 /* Pagination controls */
 .pagination-controls {
-  margin-top: 10px;
-  text-align: center;
-}
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .pagination-controls button {
+    margin: 5px;
+  }
 
 .pagination-controls button {
     background-color: #007bff;
