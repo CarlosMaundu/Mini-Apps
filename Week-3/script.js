@@ -22,6 +22,8 @@ function validateEmail(email) {
   return re.test(email);
 }
 
+
+
 // Save email to local storage
 function saveEmail(email) {
   let savedEmails = localStorage.getItem('savedEmails');
@@ -222,6 +224,7 @@ saveButton.addEventListener('click', () => {
     emailError.style.display = 'block'; 
   }
 });
+
 
 deleteSelectedButton.addEventListener('click', () => {
     if (confirm('Are you sure you want to delete selected emails?')) {

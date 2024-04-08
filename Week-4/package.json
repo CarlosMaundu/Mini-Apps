@@ -1,0 +1,22 @@
+{
+  "name": "5.87.0",
+  "version": "1.0.0",
+  "description": "Moringa Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"No tests specified\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CarlosMaundu/Mini-Apps.git"
+  },
+  "keywords": [
+    "Moringa"
+  ],
+  "author": "Carlos Maundu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CarlosMaundu/Mini-Apps/issues"
+  },
+  "homepage": "https://github.com/CarlosMaundu/Mini-Apps#readme"
+}
