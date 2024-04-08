@@ -1,0 +1,28 @@
+{
+  "name": "week-3-npm",
+  "version": "1.0.0",
+  "description": "This is a local project Moringa",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node script.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CarlosMaundu/Mini-Apps.git"
+  },
+  "keywords": [
+    "Node",
+    "npm",
+    "Safaricom"
+  ],
+  "author": "Carlos Maundu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CarlosMaundu/Mini-Apps/issues"
+  },
+  "homepage": "https://github.com/CarlosMaundu/Mini-Apps#readme",
+  "dependencies": {
+    "axios": "^1.6.8"
+  }
+}
