@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Local Storage - Email List</title>
+  <link rel="stylesheet" href="styles.css"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+
+</head>
+<body>
+  <h1>Local Storage - Email List</h1>
+
+  <div class="form-group">
+    <label for="email">Email:</label>
+    <div class="email-input-group">
+      <input type="email" id="email" name="email" placeholder="Enter email">
+      <button id="saveButton">Save</button>
+    </div>
+    <div id="emailError" class="error-message"></div>
+  </div>
+  <div id="successMessage" class="success-message"></div>
+  <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Search ...">
+    <button>Search</button>
+  </div>
+
+
+  <table id="emailTable">
+    <thead>
+        <tr>
+          <th><input type="checkbox" id="selectAll"> Select All</th> 
+          <th>Email</th>
+          <th>Actions</th> 
+        </tr>
+      </thead>
+      <tbody></tbody> 
+  </table> 
+  <button id="deleteSelectedButton">Delete Selected</button> 
+
+  <div class="pagination-controls">
+    <button id="prevPage" disabled>Previous</button> 
+    <span id="currentPage">1</span> <button id="nextPage">Next</button> 
+  </div>
+
+  <script src="script.js"></script> 
+</body>
+</html>
