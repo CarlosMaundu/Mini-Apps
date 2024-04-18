@@ -40,4 +40,16 @@ describe('Triangle Type', () => {
     expect(triangleType(-5, 3, -5)).toBe('Not a triangle');
     expect(triangleType(4, -5, -6)).toBe('Not a triangle');
   });
+
+  test('should correctly determine whether three lengths can make a triangle when one side is much larger than the other two sides', () => {
+    expect(triangleType(1, 2, 100)).toBe('Not a triangle');
+    expect(triangleType(1000, 2000, 1)).toBe('Not a triangle');
+    expect(triangleType(10000, 20000, 1)).toBe('Not a triangle');
+  });
+
+  test('should correctly determine whether three lengths can make a triangle with equal decimal sides', () => {
+    expect(triangleType(1.5, 1.5, 1.5)).toBe('Equilateral');
+    expect(triangleType(2.2, 2.2, 2.2)).toBe('Equilateral');
+    expect(triangleType(3.7, 3.7, 3.7)).toBe('Equilateral');
+  });
 });
