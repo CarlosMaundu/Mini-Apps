@@ -1,4 +1,4 @@
-const triangleType = require('../src/triangleType');
+const triangleType = require('../src/triangleType').default;
 
 describe('Triangle Type', () => {
   test('should correctly determine whether three lengths can make a triangle', () => {

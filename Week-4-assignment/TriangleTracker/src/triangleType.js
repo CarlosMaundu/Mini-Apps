@@ -10,4 +10,4 @@ function triangleType(a, b, c) {
     }
     return 'Scalene';
   }
-  module.exports = triangleType;
+  export default triangleType; // Changed to ES6 module export
