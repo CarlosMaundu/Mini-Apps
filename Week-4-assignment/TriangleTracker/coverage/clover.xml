@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1713447115611" clover="3.2.0">
-  <project timestamp="1713447115611" name="All files">
+<coverage generated="1713447604142" clover="3.2.0">
+  <project timestamp="1713447604142" name="All files">
     <metrics statements="8" coveredstatements="8" conditionals="14" coveredconditionals="14" methods="1" coveredmethods="1" elements="23" coveredelements="23" complexity="0" loc="8" ncloc="8" packages="1" files="1" classes="1"/>
     <file name="triangleType.js" path="/Users/carlosmaundu/Desktop/Moringa/Mini-Apps/Week-4-assignment/TriangleTracker/src/triangleType.js">
       <metrics statements="8" coveredstatements="8" conditionals="14" coveredconditionals="14" methods="1" coveredmethods="1"/>
-      <line num="2" count="9" type="cond" truecount="5" falsecount="0"/>
-      <line num="3" count="1" type="stmt"/>
-      <line num="5" count="8" type="cond" truecount="4" falsecount="0"/>
-      <line num="6" count="1" type="stmt"/>
-      <line num="8" count="7" type="cond" truecount="5" falsecount="0"/>
-      <line num="9" count="3" type="stmt"/>
-      <line num="11" count="4" type="stmt"/>
+      <line num="2" count="16" type="cond" truecount="5" falsecount="0"/>
+      <line num="3" count="2" type="stmt"/>
+      <line num="5" count="14" type="cond" truecount="4" falsecount="0"/>
+      <line num="6" count="2" type="stmt"/>
+      <line num="8" count="12" type="cond" truecount="5" falsecount="0"/>
+      <line num="9" count="4" type="stmt"/>
+      <line num="11" count="8" type="stmt"/>
       <line num="13" count="1" type="stmt"/>
     </file>
   </project>
