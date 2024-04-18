@@ -34,4 +34,10 @@ describe('Triangle Type', () => {
     expect(triangleType(5.5, 5.5, 3)).toBe('Isosceles');
     expect(triangleType(2.5, 2.5, 2.5)).toBe('Equilateral');
   });
+
+  test('should correctly determine whether three lengths can make a triangle when two parameters are negative and one is positive', () => {
+    expect(triangleType(-3, -4, 5)).toBe('Not a triangle');
+    expect(triangleType(-5, 3, -5)).toBe('Not a triangle');
+    expect(triangleType(4, -5, -6)).toBe('Not a triangle');
+  });
 });
