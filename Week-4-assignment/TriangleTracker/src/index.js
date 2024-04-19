@@ -1,4 +1,5 @@
 import triangleType from './triangleType';
+import '../css/styles.css';
 
 const form = document.getElementById('triangleForm');
 const result = document.getElementById('result');
