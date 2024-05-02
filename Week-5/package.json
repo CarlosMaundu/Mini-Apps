@@ -7,11 +7,18 @@
     "node-fetch": "^2.6.6"
   },
   "devDependencies": {
-    "jest": "^latest",
-    "jest-environment-node": "^latest"
+    "jest": "^29.7.0",
+    "jest-environment-node": "latest"
   },
   "jest": {
     "testEnvironment": "jest-environment-node",
     "transform": {}
-  }
+  },
+  "name": "week-5",
+  "version": "1.0.0",
+  "main": "index.js",
+  "keywords": [],
+  "author": "Carlos Maundu",
+  "license": "ISC",
+  "description": ""
 }
