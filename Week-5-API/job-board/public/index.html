@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Board</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo.png" alt="Job Search Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Find Jobs</a></li>
+                    <li><a href="#">Companies</a></li>
+                    <li><a href="#">Service</a></li>
+                    <li><a href="#" class="login">Log In</a></li>
+                    <li><a href="#" class="register">Register</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Find Your Next Job</h1>
+        <p>Discover thousands of job opportunities. Start your job search today.</p>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Job title, keyword or company">
+            <input type="text" id="locationInput" placeholder="City, state, zip or remote">
+            <button onclick="searchJobs()">Search</button>
+        </div>
+        <div class="filter-buttons">
+            <button onclick="filterByCategory('Remote')">Remote</button>
+            <button onclick="filterByCategory('MNC')">MNC</button>
+            <button onclick="filterByCategory('Sales')">Sales</button>
+            <button onclick="filterByCategory('Project Management')">Project Management</button>
+            <button onclick="filterByCategory('Development')">Development</button>
+            <button onclick="filterByCategory('Data Operator')">Data Operator</button>
+            <button onclick="filterByCategory('Internship')">Internship</button>
+            <button onclick="filterByCategory('Analytics')">Analytics</button>
+            <button onclick="filterByCategory('Others')">Others</button>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <h2>How It Works</h2>
+        <div class="feature-steps">
+            <div class="step">
+                <h3>01</h3>
+                <p>Sign Up: Create an account to get started.</p>
+            </div>
+            <div class="step">
+                <h3>02</h3>
+                <p>Personalized Recommendations: Receive job matches tailored to your profile.</p>
+            </div>
+            <div class="step">
+                <h3>03</h3>
+                <p>Apply Easily: Submit applications directly through our platform.</p>
+            </div>
+            <div class="step">
+                <h3>04</h3>
+                <p>Job Alerts: Get notified of new opportunities by email.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Job Listings Section -->
+    <section class="job-listings">
+        <h2>Latest Job Openings</h2>
+        <div id="job-count" class="job-count"></div>
+        <div id="jobs-container" class="jobs-container"></div>
+        <div class="pagination">
+            <select id="pageSize" onchange="fetchJobs()">
+                <option value="5">5 per page</option>
+                <option value="10" selected>10 per page</option>
+                <option value="15">15 per page</option>
+                <option value="20">20 per page</option>
+            </select>
+        </div>
+    </section>
+
+    <!-- Featured Companies Section -->
+    <section class="featured-companies">
+        <h2>Top Companies Hiring Now</h2>
+        <div class="carousel">
+            <button class="carousel-control prev" onclick="prevSlide()">&#10094;</button>
+            <div class="carousel-inner">
+                <div class="company">
+                    <h3>Company Name 1</h3>
+                    <p>Brief Description 1</p>
+                    <button>View Jobs</button>
+                </div>
+                <div class="company">
+                    <h3>Company Name 2</h3>
+                    <p>Brief Description 2</p>
+                    <button>View Jobs</button>
+                </div>
+                <div class="company">
+                    <h3>Company Name 3</h3>
+                    <p>Brief Description 3</p>
+                    <button>View Jobs</button>
+                </div>
+                <!-- Repeat similar blocks for other companies -->
+            </div>
+            <button class="carousel-control next" onclick="nextSlide()">&#10095;</button>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog">
+        <h2>Latest Job Board News</h2>
+        <div class="carousel">
+            <button class="carousel-control prev" onclick="prevSlide()">&#10094;</button>
+            <div class="carousel-inner">
+                <div class="blog-post">
+                    <h3>How to Write a Compelling Job Description</h3>
+                    <p>Learn the key elements to make your job description stand out and attract top candidates.</p>
+                    <button>Read More</button>
+                </div>
+                <div class="blog-post">
+                    <h3>Top 10 Tips for Job Seekers</h3>
+                    <p>Discover the best strategies to improve your chances of landing a job.</p>
+                    <button>Read More</button>
+                </div>
+                <div class="blog-post">
+                    <h3>The Importance of Networking in Job Search</h3>
+                    <p>Understand the value of networking and how to build connections that can lead to job opportunities.</p>
+                    <button>Read More</button>
+                </div>
+                <div class="blog-post">
+                    <h3>How to Prepare for a Job Interview</h3>
+                    <p>Learn the essential steps to prepare for a job interview and impress potential employers.</p>
+                    <button>Read More</button>
+                </div>
+            </div>
+            <button class="carousel-control next" onclick="nextSlide()">&#10095;</button>
+        </div>
+    </section>
+
+    <!-- Subscribe Section -->
+    <section class="subscribe">
+        <h2>Stay Updated</h2>
+        <p>Subscribe to our newsletter and never miss a job opportunity.</p>
+        <input type="email" placeholder="Enter your email">
+        <button>Subscribe</button>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 YourCompany. All Rights Reserved.</p>
+            <div class="social-media">
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
