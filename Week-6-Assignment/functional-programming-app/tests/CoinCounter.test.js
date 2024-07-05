@@ -19,8 +19,8 @@ test('countCoinsRecursive handles negative amounts correctly', () => {
 });
 //Verify countCoinsRecursive returns an empty object when the amount is zero
 test('coinCounterClosure returns an empty object when the amount is zero', () => {
-    expect(coinCounterClosure(0)).toEqual({ remainder: 0 });
-  });
+    expect(coinCounterClosure(0)).toEqual({ 25: 0, 10: 0, 5: 0, 1: 0, remainder: 0 });
+});
   test('coinCounterClosure handles negative amounts correctly', () => {
     expect(() => coinCounterClosure(-5.99)).toThrow('Amount must be a positive number');
   });
