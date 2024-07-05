@@ -47,3 +47,4 @@ export const coinCounterClosure = (amount) => {
         return { ...acc, [coin]: count, remainder };
     }, { remainder: amountInCents });
 };
+
